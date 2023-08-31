@@ -1,8 +1,8 @@
 # YOLOv8-model-improvement
 ## 目录
-- [yes](#yes)
+- [项目基本介绍](#项目基本介绍)
 - [no](#no)
-## yes
+## 项目基本结束
 本项目对著名的YOLOv8模型进行了多角度的改进优化，并在特定数据集上实现了精度的上涨
 
 采用改进版本的YOLOv8模型与两个表现优良的跟踪器结合(botsort和bytetrack)
