@@ -1,4 +1,4 @@
-![a41f5034370fd80647b16d86b52272c](https://github.com/Zwc2003/YOLOv8-model-improvement/assets/126054446/d98e6785-8be7-4837-a0d3-1f8e7bf76d9a)# YOLOv8-model-improvement
+# YOLOv8-model-improvement
 ## 目录
 - [项目基本介绍](#项目基本介绍)
 - [启动前后端交互系统](#启动前后端交互系统)
@@ -52,7 +52,9 @@ val:868
 ### 完整web端展示界面
 web端由Vue和Flask开发，基于目标跟踪实现了两个应用场景的简单功能，两种跟踪器可选（botsort,bytetrack）
 
-![a41f5034370fd80647b16d86b52272c](https://github.com/Zwc2003/YOLOv8-model-improvement/assets/126054446/41913583-5087-4f40-9b08-1914b567ed90)
+![image](https://github.com/Zwc2003/YOLOv8-model-improvement/assets/126054446/7950eb32-a778-4768-b3fa-c607c011f7d6)
+
+
 
 #### 球员运动轨迹分析
 展示每个目标的运动轨迹及速度和加速度
@@ -66,9 +68,66 @@ web端由Vue和Flask开发，基于目标跟踪实现了两个应用场景的简
 在每个逆行目标位置标注其id和轨迹
 
 在视频的左上角集中地展示所有逆行的id
-## 启动前后交互系统
+## 启动前后端交互系统
 ### 启动后端
+打开后端项目文件夹
+
+在`app.py`中指定ip地址和监听端口，需与前端一致，详情见下方前前端的[配置代理服务](#配置代理服务)
+```
+if __name__ == '__main__':
+    socketio.run(app, host="localhost", debug=True, port=5000, allow_unsafe_werkzeug=True)
+```
+#### 修改推理使用模型
+如果想用其他模型进行推理，请在`functions`下的三个py文件中修改加载模型的路径：
+
+```
+# Load the model
+    model = YOLO('./runs/detect/best-model/weights/best.onnx')
+```
+
+在当前目录下终端运行`python app.py`即可启动后端服务
+
+### 启动前端
+打开前端项目文件夹
+#### 运行环境
+
+Vue 2.x.x
+
+Node >= 6.0.0
+
+Npm >= 3.0.0
+#### 在当前目录下运行以下命令进行启动
+```
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+#### 配置代理服务
+需在config/index.js中进行配置，在配置完成后请重新启动项目方可生效
+```
+proxyTable: {
+  '/api' : {
+    // target需更换为后端实际局域网内IP，目前仅支持同一网段下的服务,端口(5000)也需和后端监听的端口一致
+    target: 'http://localhost:5000',
+    ws: true,
+    secure: false,
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api': ''
+    }
+  }
+},
+```
 ## 如何训练自己的数据集
+请在后端项目文件中进行以下操作
 ### 配置环境
 需要的环境已在requirements.txt中声明
 
