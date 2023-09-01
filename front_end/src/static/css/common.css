@@ -1,0 +1,237 @@
+/*全局css*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: 100% 100%;
+}
+
+
+.container div {
+  text-align: center;
+}
+
+/**/
+
+/*全局弹窗*/
+
+.el-message-box {
+  width: 30vw;
+  padding-bottom: 2vh;
+  font-size: 2vh;
+}
+
+.el-message-box__header {
+  padding: 3vh 3vh 2vh;
+}
+
+.el-message-box__title {
+  font-size: 1.7vw;
+}
+
+.el-message-box__content {
+  padding: 2vh 1.5vw;
+  font-size: 1vw;
+}
+
+.el-message-box__status {
+  font-size: 2vw !important;
+}
+
+.el-message-box__status+.el-message-box__message {
+  padding-left: 2.5vw;
+  padding-right: 3vw;
+}
+
+.el-message-box__btns {
+  padding: 2vh 1vw;
+}
+
+.el-button--small {
+  padding: 1.6vh 2vw;
+  font-size: 1.5vh;
+}
+
+.el-message-box__btns button:nth-child(2) {
+  margin-left: .8vw;
+}
+
+/**/
+
+/*全局消息*/
+
+.el-message {
+  opacity: .7;
+  border-radius: 25px;
+  min-width: 0;
+  top: 5vh !important;
+  padding: 2.2vh 2.2vw;
+}
+
+.el-message__icon {
+  margin-right: .5vw;
+  font-size: 3vh;
+}
+
+.el-message__content {
+  font-size: 2vh;
+}
+
+/**/
+
+
+/*步骤条*/
+
+.steps {
+  /* position: absolute; */
+  width: 100%;
+  top: 1vh;
+  height: 7vh;
+}
+
+.el-step__line {
+  top: 1.25vw !important;
+}
+
+.el-step__icon {
+  height: 2.5vw;
+  width: 2.5vw;
+  font-size: 1.1vw;
+}
+
+.el-step__title {
+  margin-top: .4vh;
+  font-size: 1vw;
+}
+
+/**/
+
+/*开关按钮*/
+
+.el-switch {
+  height: 5vh;
+  line-height: 5vh;
+}
+
+.el-switch .el-switch__core {
+  width: 7.2vh !important;
+  height: 3.6vh !important;
+  border-radius: 50px;
+}
+
+.el-switch .el-switch__core::after {
+  width: 3.2vh !important;
+  height: 3.2vh !important;
+  top: 0.1vh;
+  left: 0.1vh;
+}
+
+.el-switch.is-checked .el-switch__core::after {
+  margin-left: -3.4vh;
+}
+
+/**/
+
+/*表单*/
+
+.el-form-item__label {
+  font-size: 2.3vh;
+  line-height: 5vh;
+}
+
+.el-form-item__content {
+  text-align: left !important;
+}
+
+.el-form-item {
+  margin-bottom: 0;
+}
+
+/**/
+
+/*弹窗*/
+
+.el-dialog {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, .7);
+  border-radius: 25px;
+}
+
+.el-dialog__header {
+  padding: 0;
+}
+
+.el-dialog__body {
+  padding: 1vh;
+}
+
+/**/
+
+/*进度条*/
+
+.el-progress-circle {
+  height: 30vh !important;
+  width: 30vh !important;
+}
+
+.el-progress__text {
+  font-size: 3vh !important;
+}
+
+/**/
+
+/*多选框*/
+
+.el-select .el-input__inner {
+  width: 20vw;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 2vh;
+}
+
+.el-select .el-tag {
+  font-size: 1.5vh;
+}
+
+.el-select .el-tag--small {
+  height: 4vh;
+  line-height: 4vh;
+}
+
+.el-select-group__title {
+  font-size: 1.5vh;
+  line-height: 3.5vh;
+}
+
+.el-select-dropdown__wrap {
+  max-height: 40vh;
+}
+
+.el-select-dropdown__item {
+  font-size: 1.8vh;
+  padding: 0 1vh;
+  height: 3.5vh;
+  line-height: 3.5vh;
+}
+
+/**/
+
+/*单选框*/
+
+.el-radio-group {
+  line-height: 2.5vh;
+}
+
+.el-radio-group .el-radio-button__inner {
+  padding: 1.5vh 2vw;
+  font-size: 2vh;
+}
+
+/**/
